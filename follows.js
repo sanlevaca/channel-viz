@@ -15,8 +15,8 @@
 	var defaultKey		= 'vpm5Z9hBCzX9F55sYsqVOpCLHm9e5nkM8IdHON8yfPwO4mUH', // Unique master Xively API key to be used as a default
 		defaultFeeds	= [1336995829], // Comma separated array of Xively Feed ID numbers
 		applicationName	= 'PCM Refrigerator', // Replaces Xively logo in the header
-		dataDuration	= '90days', // Default duration of data to be displayed // ref: https://xively.com/dev/docs/api/data/read/historical_data/
-		dataInterval	= 10800, // Default interval for data to be displayed (in seconds)
+		dataDuration	= '6hours', // Default duration of data to be displayed // ref: https://xively.com/dev/docs/api/data/read/historical_data/
+		dataInterval	= 30, // Default interval for data to be displayed (in seconds)
 		dataColor		= '0A1922', // CSS HEX value of color to represent data (omit leading #)
 		hideForm		= 1; // To hide input form use value of 1, otherwise set to 0
 
@@ -241,7 +241,7 @@
 			if($('#feed-' + id)) {
 				$('#feed-' + id).remove();
 			}
-			xively.feed.history(id, {  duration: "6hours", interval: 30 }, function (data) {
+			xively.feed.history(id, {  duration: "1hours", interval: 5 }, function (data) {
 				if(data.id == id) {
 					// Duplicate Example to Build Feed UI
 					$('#exampleFeed').clone().appendTo('#feeds').attr('id', 'feed-' + id).removeClass('hidden');
@@ -337,6 +337,12 @@
 							$('#feed-' + data.id + ' .map').addClass('hidden');
 					}
 
+					$('#feed-' + data.id + ' .duration-1h').click(function() {
+						$('#loadingData').foundation('reveal', 'open');
+						updateFeeds(data.id, thisFeedDatastreams, '1hour', 5);
+						return false;
+					});
+					
 					$('#feed-' + data.id + ' .duration-hour').click(function() {
 						$('#loadingData').foundation('reveal', 'open');
 						updateFeeds(data.id, thisFeedDatastreams, '6hours', 30);
@@ -361,11 +367,11 @@
 						return false;
 					});
 
-					$('#feed-' + data.id + ' .duration-90').click(function() {
+				/*	$('#feed-' + data.id + ' .duration-90').click(function() {
 						$('#loadingData').foundation('reveal', 'open');
 						updateFeeds(data.id, thisFeedDatastreams, '90days', 10800);
 						return false;
-					});
+					}); */
 
 					// Handle Datastreams
 					if(dataDuration != '' && dataInterval != 0) {
