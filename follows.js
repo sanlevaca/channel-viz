@@ -161,15 +161,15 @@
 										series: [
 											{
 												color: "#c05020",
-												data: seriesData[0],
+												data: series[0],
 												name: 'New York'
 											}, {
 												color: "#30c020",
-												data: seriesData[1],
+												data: series[1],
 												name: 'London'
 											}, {
 												color: "#6060c0",
-												data: seriesData[2],
+												data: series[2],
 												name: 'Tokyo'
 											}
 										]
