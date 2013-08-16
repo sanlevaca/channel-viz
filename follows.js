@@ -157,7 +157,22 @@
 											bottom: 0.02,
 											left: 0.02
 										},
-										series: series
+										//series: series
+										series: [
+											{
+												color: "#c05020",
+												data: seriesData[0],
+												name: 'New York'
+											}, {
+												color: "#30c020",
+												data: seriesData[1],
+												name: 'London'
+											}, {
+												color: "#6060c0",
+												data: seriesData[2],
+												name: 'Tokyo'
+											}
+										]
 									});
 
 									graph.render();
