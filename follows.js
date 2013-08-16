@@ -157,8 +157,8 @@
 											bottom: 0.02,
 											left: 0.02
 										},
-										//series: series
-										series: [
+										series: series
+										/*series: [
 											{
 												color: "#c05020",
 												data: series[0],
@@ -172,7 +172,7 @@
 												data: series[2],
 												name: 'Tokyo'
 											}
-										]
+										] */
 									});
 
 									graph.render();
