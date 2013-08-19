@@ -242,7 +242,7 @@
 			if($('#feed-' + id)) {
 				$('#feed-' + id).remove();
 			}
-			xively.feed.history(id, {  duration: "1hours", interval: 5 }, function (data) {
+			xively.feed.history(id, {  duration: "1hour", interval: 5 }, function (data) {
 				if(data.id == id) {
 					// Duplicate Example to Build Feed UI
 					$('#exampleFeed').clone().appendTo('#feeds').attr('id', 'feed-' + id).removeClass('hidden');
