@@ -12,8 +12,8 @@
 		hideForm		= 0;
 	*/
 
-	var defaultKey		= 'zmGUnZqWyDjqbiozPQq5LNjFBhfc9jBl0QOesdaYFsIjLUwY', // Unique master Xively API key to be used as a default
-		defaultFeeds	= '358590698!Temp1!Temp2!Temp3!Temp4!Pulses!Temp0', // Comma separated array of Xively Feed ID numbers
+	var defaultKey		= 'oOXJSIgJUh9KskAa2beDyMzFJ2EUYBaZcdRqRObsvuw4CIgL', // Unique master Xively API key to be used as a default
+		defaultFeeds	= '1778831238!Temp1!Temp2!Temp3!Temp4!Pulses!Temp0!Temp5!Temp6!Temp7!Temp8!Temp9', // Comma separated array of Xively Feed ID numbers
 		applicationName	= 'PCM Refrigerator', // Replaces Xively logo in the header
 		dataDuration	= '6hours', // Default duration of data to be displayed // ref: https://xively.com/dev/docs/api/data/read/historical_data/
 		dataInterval	= 30, // Default interval for data to be displayed (in seconds)
